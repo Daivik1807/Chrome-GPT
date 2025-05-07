@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ChromeGPT (Ollama Edition)",
+  "version": "1.1",
+  "description": "Select text and get responses from a local Ollama instance.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting" 
+  ],
+  "host_permissions": [
+    "http://localhost:11434/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "ChromeGPT (Ollama)"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

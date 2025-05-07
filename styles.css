@@ -1,0 +1,173 @@
+/* Add these styles to your existing styles.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 380px; /* Slightly wider */
+  max-height: 550px;
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 16px; /* Slightly smaller title */
+  font-weight: 600;
+  text-align: center;
+  background-color: #4a5568; /* Darker header */
+  color: white;
+  padding: 10px 12px;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.container {
+  padding: 12px 16px; /* Adjusted padding */
+  flex: 1;
+  overflow-y: auto;
+   /* Add scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #adb5bd #f1f3f5;
+}
+
+/* Basic Spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #09f; /* Blue */
+  margin: 10px auto;
+
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Message Style */
+.error-message {
+    background-color: #fff3f3; /* Light red */
+    color: #dc3545; /* Red text */
+    border: 1px solid #f5c6cb; /* Red border */
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#responseArea {
+    margin-top: 10px;
+}
+
+.message-block {
+  margin-bottom: 14px;
+}
+
+.message-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 13px; /* Slightly smaller titles */
+  color: #495057; /* Darker gray */
+}
+
+.message-question,
+.message-answer {
+  background-color: #ffffff;
+  border-left: 3px solid #dee2e6; /* Lighter border */
+  padding: 8px 10px; /* Adjusted padding */
+  border-radius: 4px;
+  font-size: 14px; /* Standard text size */
+  line-height: 1.5;
+  white-space: pre-wrap; /* Keep formatting */
+  word-wrap: break-word; /* Break long words */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.message-question {
+    border-left-color: #4dabf7; /* Blue */
+}
+
+.message-answer {
+     border-left-color: #69db7c; /* Green */
+     margin-top: 8px; /* Space between Q and A */
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px 12px 16px; /* Adjusted padding */
+  gap: 10px; /* Increased gap */
+  border-top: 1px solid #e9ecef; /* Separator line */
+  background-color: #f8f9fa; /* Light background for button area */
+}
+
+button {
+  flex: 1;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 0; /* Adjusted padding */
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004a9a;
+}
+
+/* Style specific buttons */
+#toggleHistoryBtn, #clearHistoryBtn {
+     flex: none; /* Don't stretch these */
+     padding: 6px 12px;
+     font-size: 12px;
+}
+
+#clearHistoryBtn {
+    background-color: #e03131; /* Red */
+}
+#clearHistoryBtn:hover {
+    background-color: #c92a2a;
+}
+
+
+#historyDisplayArea {
+    background-color: #f8f9fa; /* Slightly different background for history */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+#historyEntries {
+    max-height: 250px; /* Limit history view height */
+    overflow-y: auto;
+     /* Add scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: #adb5bd #f1f3f5;
+}
+
+.history-entry .timestamp {
+    font-size: 11px;
+    color: #868e96; /* Lighter timestamp */
+    margin-bottom: 5px;
+}
+
+.history-entry hr {
+    border: none;
+    border-top: 1px dashed #ced4da; /* Dashed separator */
+    margin: 12px 0;
+}
